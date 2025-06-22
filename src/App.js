@@ -1,9 +1,15 @@
 
+import { Provider } from "react-redux";
 import Body from "./components/Body";
+import AppStore from "./utils/AppStore";
+import { Router } from "react-router-dom";
 
 function App() {
   return (
-   <Body/>
+
+      <Provider store={AppStore}> <Body/> </Provider>
+
+     
   );
 }
 
