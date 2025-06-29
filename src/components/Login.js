@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import {  updateProfile } from "firebase/auth";
-import { PHOTO_URL } from "../utils/constant";
+import { PHOTO_URL,BG_URL } from "../utils/constant";
 import {login} from "../utils/UserSlice";
 import Header from "./Header";
   import { checkValidData } from "../utils/Validate";
@@ -34,7 +34,7 @@ const Login = () => {
 
     if(!isSignIn) {
       // Create a new user
-      console.log(email.current.value +"-" +password.current.value);
+     // console.log(email.current.value +"-" +password.current.value);
       createUserWithEmailAndPassword(auth, email.current.value,password.current.value)
       .then((userCredential) => {
        // Signed up 
@@ -71,7 +71,6 @@ const Login = () => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    console.log("User signed in successfully!" + user);
    
     // ...
   })
@@ -104,7 +103,7 @@ const Login = () => {
     <div>
       <Header/>
        <div className="absolute">
-       <img  className="h-auto w-screen" src="https://occ-0-2218-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABe5CHwwZ8S4j91phfWWM1qmM7gA4TS4tIEBRcNY-DZPZiPgRZR2jj9yH5WglzkoAvTcT8BT5lQiDfceRKYwaCPgaZb_DdkLmFvKb.webp?r=bf7" alt="body content" />
+       <img  className="h-auto w-screen" src={BG_URL} alt="body content" />
        </div>
        {/* Sign in/Sign up page */}
            
